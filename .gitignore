@@ -39,3 +39,7 @@ env/
 
 # Mac files
 .DS_Store
+
+# Project ignored files
+groups.json
+*.html
