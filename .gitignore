@@ -36,3 +36,6 @@ coverage.xml
 
 # Virtualenv
 env/
+
+# Mac files
+.DS_Store
