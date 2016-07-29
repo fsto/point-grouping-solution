@@ -56,12 +56,12 @@ class GroupedVanPoints(VanPoints):
 
         1. while len(visited_points) < number of points:
             a. van = van with the smallest convex hull area
-            b. next_point = get_nearest_not_visited_point(van.current_point)
-            c. register van at current_point
+            b. next_point = get_nearest_not_visited_point(van.initial_point)
+            c. register van at next_point
         """
         self._register_initial_van_points()
         while len(self._visited_points) < len(self._points):
             van = sorted(self._vans, key=lambda van: self._get_van_area(van))[0]
-            current_point = self._get_current_van_point(van)
-            next_point = self._get_nearest_not_visisted_point(current_point)
+            van_initial_point = self._get_initial_van_point(van)
+            next_point = self._get_nearest_not_visisted_point(van_initial_point)
             self._register_van_at_point(van, next_point)

@@ -48,8 +48,8 @@ class VanPoints(object):
     def _visited_points(self):
         return reduce(lambda a, b: a + b, self.van_points.itervalues())
     
-    def _get_current_van_point(self, van):
-        return self.van_points[van][-1]
+    def _get_initial_van_point(self, van):
+        return self.van_points[van][0]
 
     def _register_van_at_point(self, van, point):
         self.van_points[van].append(point)

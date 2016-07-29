@@ -36,10 +36,20 @@ class GroupingTest(TestBase):
 
     def test_total_number_of_points_in_groups(self):
         # Assert total number of points in point groups is correct
-        for num_vans in range(1, 30):
+        for num_vans in range(1, 32, 10):
             van_points = GroupedVanPoints(num_vans, self.points)
             found_points = sum([len(point_group) for point_group in van_points.van_points.itervalues()])
             self.assertEqual(found_points, len(self.points))
+
+    @unittest.skip("Algorithm needs an upgrade to pass this")
+    def test_aggregated_area_shrinks_with_more_vans(self):
+        area_with_fewer_vans = sys.maxint
+        for num_vans in range(1, 30):
+            van_points = GroupedVanPoints(num_vans, self.points)
+            area_with_more_vans = get_aggregated_convex_hull_area(van_points)
+            print area_with_fewer_vans, area_with_more_vans
+            self.assertLess(area_with_more_vans, area_with_fewer_vans)
+            area_with_fewer_vans = area_with_more_vans
 
 
 class DistributionTest(TestBase):

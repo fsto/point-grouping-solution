@@ -76,8 +76,8 @@ To limit the "total effort for our vans this algorithm focuses on creating a [cl
     d. i++        
 5. while len(visited_points) < number of points:
     a. van = van with the smallest convex hull area
-    b. next_point = get_nearest_not_visited_point(van.current_point)
-    c. register van at current_point
+    b. next_point = get_nearest_not_visited_point(van.initial_point)
+    c. register van at next_point
 
 ##### Time complexity
 
@@ -115,8 +115,8 @@ Our goal here is very similar to the grouping algorithm with the difference that
 5. counter = 0
 6. while len(visited_points) < number of points:
     a. van = vans[counter % (number of vans)]
-    b. next_point = get_nearest_not_visited_point(van.current_point)
-    c. register van at current_point
+    b. next_point = get_nearest_not_visited_point(van.initial_point)
+    c. register van at next_point
     d. counter++
 
 ##### Time complexity
