@@ -47,7 +47,7 @@ We want to give `n` vans one group of points each. Each point is a (latitude, lo
 * The smallest total effort for our vans
 * Spread the effort somewhat fairly between the vans
 
-The challenge is pretty much TPS on steroids and since we don't know the number of vans or points, we'll have to assume that trying each possible solution is not an option.
+The challenge is pretty much TSP on steroids and since we don't know the number of vans or points, we'll have to assume that trying each possible solution is not an option.
 
 ##### Warehouse
 
@@ -59,7 +59,7 @@ We don't know about the roads between points, so we'll assume the travel time be
 
 #### Grouping algorithm
 
-To limit the "total effort for our vans this algorithm focuses on creating a [clique](https://en.wikipedia.org/wiki/Clique_(graph_theory)) of points for each van where the sum of all [convex hulls](https://en.wikipedia.org/wiki/Clique_(graph_theory)) areas is as small as possible. Since we can't try every convex hull area combination, we'll split the problem into two parts:
+To limit the total effort for our vans this algorithm focuses on creating a [clique](https://en.wikipedia.org/wiki/Clique_(graph_theory)) of points for each van where the sum of all [convex hulls](https://en.wikipedia.org/wiki/Clique_(graph_theory)) areas is as small as possible. Since we can't try every convex hull area combination, we'll split the problem into two parts:
 
 * finding initial positions for the vans
 * assigning the rest of the points to the vans
